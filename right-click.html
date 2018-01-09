@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Right-click demo</title>
+    <link rel="stylesheet" href="css/css-reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/right-click.css">
+    <script src="https://use.fontawesome.com/cab85a48b2.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Stardos+Stencil" rel="stylesheet">
+</head>
+<body>
+    <header class="row">
+        <div class="col-6 title">
+            <a class="hamburger-menu fLeft" href="../project/index.html"><i class="fa fa-list-ul projectMenu"></i></a>
+            <h1>Right-click context menu</h1>
+            <p class="subtitle"></p>
+        </div>
+        <div class="col-6">
+            <div class="row">
+                <div class="col-12 text-right p0">
+                    <label for="themeSelector">Theme: </label>
+                    <select id="themeSelector">
+                        <option value="theme1">Theme 1 - bright</option>
+                        <option value="theme2">Theme 2 - light</option>
+                        <option value="theme3">Theme 3 - dark</option>
+                        <option value="theme4">Theme 4 - plain</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="main">
+        <ul class="tasks">
+            <li class="task" data-id="1">
+                <div class="task__content">
+                    I. Aplicatii (Jocuri): <a href="../project/8puzzle.html">Slider puzzle</a>
+                </div>
+                <div class="task__actions">
+                    <i class="fa fa-eye menuAction"></i>
+                    <i class="fa fa-edit menuAction"></i>
+                    <i class="fa fa-times menuAction"></i>
+                </div>
+            </li>
+            <li class="task" data-id="2">
+                <div class="task__content">
+                    II. Controale: <a href="../project/right-click.html">Right-click - contextual menu</a>
+                </div>
+                <div class="task__actions">
+                    <i class="fa fa-eye menuAction"></i>
+                    <i class="fa fa-edit menuAction"></i>
+                    <i class="fa fa-times menuAction"></i>
+                </div>
+            </li>
+            <li class="task" data-id="3">
+                <div class="task__content">
+                    III. Animatie: <a href="../project/ping-pong.html">Ping-Pong</a>
+                </div>
+                <div class="task__actions">
+                    <i class="fa fa-eye menuAction"></i>
+                    <i class="fa fa-edit menuAction"></i>
+                    <i class="fa fa-times menuAction"></i>
+                </div>
+            </li>
+            <!-- more task items here... -->
+        </ul>
+    </div>
+
+    <nav class="context-menu context-menu_theme1" id="context-menu">
+        <ul class="context-menu__items">
+            <li class="context-menu__item">
+                <a href="#" class="context-menu__link">
+                    <i class="fa fa-eye"></i> View Task
+                </a>
+            </li>
+            <li class="context-menu__item">
+                <a href="#" class="context-menu__link">
+                    <i class="fa fa-edit"></i> Edit Task
+                </a>
+            </li>
+            <li class="context-menu__item context-menu__item--disabled">
+                <a href="#" class="context-menu__link">
+                    <i class="fa fa-ban"></i> Disabled Task
+                </a>
+            </li>
+            <li class="context-menu__item context-menu__item--separator"></li>
+            <li class="context-menu__item">
+                <a href="#" class="context-menu__link">
+                    <i class="fa fa-times"></i> Delete Task
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <footer class="text-center">
+        <div id="result" class="">Right-click in the main area to open the menu!</div>
+    </footer>
+
+    <script src="js/utils.js"></script>
+    <script src="js/right-click.js"></script>
+</body>
+</html>

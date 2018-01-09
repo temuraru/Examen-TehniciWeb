@@ -1,0 +1,147 @@
+
+currentTile = the 'empty' tile on the n x n board, corresponding to the '_' character
+currentTileIndex = index of the current tile in the tiles array (0-indexed)
+currentTilePosition = position of the current moving tile on n x n board (1-indexed)
+
+Each move attempt could be:
+- a keyboard press on the direction keys towards the target position
+- a mouse click on the target position
+We verify that the target position is among the possible (valid) positions
+(an array with directions as keys and 0-indexed positions as values)
+
+If it is a valid target position for the current tile:
+- exchange the positions in the tiles array (0-indexed)
+- set the new current tile with the target position
+- redraw the board / css animation for the exchange
+
+
+/******************************************************************************
+ *  Name:
+ *  NetID:
+ *  Precept:
+ *
+ *  Partner Name:
+ *  Partner NetID:
+ *  Partner Precept:
+ *
+ *  Hours to complete assignment (optional):
+ *
+ ******************************************************************************/
+
+Programming Assignment 4: Slider Puzzle
+
+
+/******************************************************************************
+ *  Explain briefly how you implemented the Board data type.
+ *****************************************************************************/
+
+
+
+
+/******************************************************************************
+ *  Explain briefly how you represented a search node
+ *  (board + number of moves + previous search node).
+ *****************************************************************************/
+
+
+
+
+
+
+
+/******************************************************************************
+ *  Explain briefly how you detected unsolvable puzzles.
+ *
+ *  What is the order of growth of the running time of your isSolvable()
+ *  method as function of the board size n? Recall that with order-of-growth
+ *  notation, you should discard leading coefficients and lower-order terms,
+ *  e.g., n log n or n^3.
+
+ *****************************************************************************/
+
+Description:
+
+
+
+Order of growth of running time:
+
+
+
+/******************************************************************************
+ *  For each of the following instances, give the minimum number of moves to
+ *  solve the instance (as reported by your program). Also, give the amount
+ *  of time your program takes with both the Hamming and Manhattan priority
+ *  functions. If your program can't solve the instance in a reasonable
+ *  amount of time (say, 5 minutes) or memory, indicate that instead. Note
+ *  that your program may be able to solve puzzle[xx].txt even if it can't
+ *  solve puzzle[yy].txt even if xx > yy.
+ *****************************************************************************/
+
+
+                 min number          seconds
+     instance     of moves     Hamming     Manhattan
+   ------------  ----------   ----------   ----------
+   puzzle28.txt
+   puzzle30.txt
+   puzzle32.txt
+   puzzle34.txt
+   puzzle36.txt
+   puzzle38.txt
+   puzzle40.txt
+   puzzle42.txt
+
+
+
+/******************************************************************************
+ *  If you wanted to solve random 4-by-4 or 5-by-5 puzzles, which
+ *  would you prefer: a faster computer (say, 2x as fast), more memory
+ *  (say 2x as much), a better priority queue (say, 2x as fast),
+ *  or a better priority function (say, one on the order of improvement
+ *  from Hamming to Manhattan)? Why?
+ *****************************************************************************/
+
+
+
+
+
+
+/******************************************************************************
+ *  Known bugs / limitations.
+ *****************************************************************************/
+
+
+
+/******************************************************************************
+ *  Describe whatever help (if any) that you received.
+ *  Don't include readings, lectures, and precepts, but do
+ *  include any help from people (including course staff, lab TAs,
+ *  classmates, and friends) and attribute them by name.
+ *****************************************************************************/
+
+
+
+
+
+/******************************************************************************
+ *  Describe any serious problems you encountered.
+ *****************************************************************************/
+
+
+
+/******************************************************************************
+ *  If you worked with a partner, assert below that you followed
+ *  the protocol as described on the assignment page. Give one
+ *  sentence explaining what each of you contributed.
+ *****************************************************************************/
+
+
+
+
+
+
+
+/******************************************************************************
+ *  List any other comments here. Feel free to provide any feedback
+ *  on how much you learned from doing the assignment, and whether
+ *  you enjoyed doing it.
+ *****************************************************************************/
