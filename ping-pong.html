@@ -11,32 +11,58 @@
     <link href="https://fonts.googleapis.com/css?family=Stardos+Stencil" rel="stylesheet">
 </head>
 <body>
-<header class="row">
-    <div class="col-4 title">
-        <a class="hamburger-menu fLeft" href="../project/index.html"><i class="fa fa-list-ul projectMenu"></i></a>
-        <h1>Ping-Pong</h1>
-    </div>
-    <div class="col-8">
-        <div class="row">
-            <div class="col-8 text-right p0"><button id="randomize">Randomize <span id="randomIterations"></span></button></div>
-            <div class="col-4 text-right p0">
+    <header class="row">
+        <div class="col-4 title">
+            <a class="hamburger-menu fLeft" href="../project/index.html"><i class="fa fa-list-ul projectMenu"></i></a>
+            <h1>Ping-Pong</h1>
+        </div>
+        <div class="col-8">
+            <div class="row">
+                <div class="col-8 text-right p0">
+                    <span id="randomize">Randomize</span>
+                </div>
+                <div class="col-4 text-right p0">
+                    <div class="slidersContainer repaintInterval">
+                        <div class="sliderItem">
+                            <div class="sliderValue sliderLabel">Speed:</div>
+                            <div class="sliderValue sliderStart">1</div>
+                            <div class="sliderValue sliderContainer">
+                                <input id="repaintInterval" class="slider" type="range" value="50" min="1" max="200" title="Set the animation speed (the higher the value, the slower the animation)!" />
+                            </div>
+                            <div class="sliderValue sliderEnd">200</div>
+                        </div>
+                        <div class="sliderItem ballsNr">
+                            <div class="sliderValue sliderLabel">Balls:</div>
+                            <div class="sliderValue sliderStart">1</div>
+                            <div class="sliderValue sliderContainer">
+                                <input id="ballsNr" class="slider" type="range" value="5" min="1" max="30" title="Set the balls number (0 = random)!" />
+                            </div>
+                            <div class="sliderValue sliderEnd">30</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</header>
+    </header>
 
-<div class="pingContainer">
-    <div class="pongContainer">
+    <canvas id="myCanvas"></canvas>
 
-    </div>
-</div>
-<footer class="text-center">
-    <div id="result" class="hidden">Congrats! You've just solved the puzzle!!!</div>
-    <div class="stats">
-    </div>
-</footer>
+    <footer class="text-center">
+        <div id="result" class="hidden">Congrats!</div>
+        <div class="stats">
+            <span class="stat">
+                Speed: <span class="repaintInterval"></span>
+            </span>
+            <span class="stat">
+                Balls: <span class="ballsNr"></span>
+            </span>
+            <span class="stat">
+                Animation frames:  <span id="iterations"></span>
+            </span>
+        </div>
+    </footer>
 
-<script src="js/utils.js"></script>
-<script src="js/ping-pong.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/ping-pong.js"></script>
 </body>
 </html>

@@ -24,7 +24,32 @@ function shuffleArrayEs6(array) {
     }
 }
 
-// sleep time expects milliseconds
+/**
+ * Read a parameter value from URL
+ * @param paramName string
+ * @returns {string}
+ */
+function readUrlParam(paramName) {
+    let newValue;
+    let searchPart = window.location.search.replace('?', ''); // or .slice(1);
+    let queryString = searchPart.split('#')[0].replace('&amp;', '&');
+    let parts = queryString.split('&');
+    for (let i=0; i<parts.length; i++) {
+        let part = parts[i].split('=');
+        if (part[0] === paramName) {
+            newValue = part[1];
+            break;
+        }
+    }
+
+    return newValue;
+}
+
+/**
+ * Sleep (time in milliseconds)
+ * @param time integer
+ * @returns {Promise}
+ */
 function sleep(time) {
     return new Promise((resolve) => setTimeout(resolve, time));
 }
@@ -41,10 +66,65 @@ function getContainerInnerHeight() {
     let footerHeight = document.querySelector('footer').scrollHeight;
     let windowHeight = window.innerHeight;
 
-    let containerHeight = windowHeight - (headerHeight + footerHeight);
     let outerSpacing = (2 + 2 * 20);
+    let containerHeight = windowHeight - (headerHeight + footerHeight + outerSpacing);
 
     console.log(headerHeight, footerHeight, windowHeight, containerHeight);
-    return (containerHeight - outerSpacing);
+    return containerHeight;
 }
 
+function getContainerInnerWidth() {
+    let windowWidth = window.innerWidth;
+
+    let outerSpacing = 2 * 2 + 2 * 20; // px - margin + border
+    let containerWidth = windowWidth - outerSpacing;
+
+    console.log(windowWidth, outerSpacing, containerWidth);
+    return containerWidth;
+}
+
+/**
+ * Generate an integer between 0 and max
+ * @param max integer
+ * @returns {int}
+ */
+function getRandomInt(max) {
+    return randomInt(0, max);
+}
+
+/**
+ * Generate a random integer between two limits
+ * @param min integer
+ * @param max integer
+ * @returns {int}
+ */
+function randomInt(min, max) {
+    return  Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+/**
+ * Generate a random RGB color
+ * @returns {string}
+ */
+function generateRandomColor(uniform, transparency) {
+    let colorParts;
+
+    uniform = uniform || false;
+    transparency = transparency || false;
+
+    if (uniform) {
+        let color = randomInt(0, 255);
+        colorParts = [color, color, color];
+    } else {
+        colorParts = [
+            randomInt(0,255),
+            randomInt(0,255),
+            randomInt(0,255),
+        ];
+    }
+    if (transparency) {
+        colorParts.push(transparency);
+    }
+
+    return 'rgb(' + colorParts.join(',') +')';
+}

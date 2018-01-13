@@ -31,3 +31,15 @@ astfel încât utilizatorul să poată schimba prin comenzi
 viteza / conţinutul / traiectoria unei animaţii etc).
 
 
+### Resources
+Number.MAX_SAFE_INTEGER = 253 - 1 
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER
+Bouncing balls
+    https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_building_practice
+Input type Range
+    https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range    
+    
+    
+    
+    
+    
