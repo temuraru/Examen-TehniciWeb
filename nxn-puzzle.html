@@ -6,7 +6,7 @@
     <title>Slider Puzzle demo</title>
     <link rel="stylesheet" href="css/css-reset.css">
     <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/8puzzle.css">
+    <link rel="stylesheet" href="css/nxn-puzzle.css">
     <script src="https://use.fontawesome.com/cab85a48b2.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Stardos+Stencil" rel="stylesheet">
 </head>
@@ -15,16 +15,17 @@
         <div class="col-4 title">
             <a class="hamburger-menu fLeft" href="../project/index.html"><i class="fa fa-list-ul projectMenu"></i></a>
             <h1>Slider puzzle</h1>
-            <p class="subtitle">3x3 <-> 9x9 puzzle</p>
+            <p class="subtitle">3x3 <i class="fa fa-exchange"></i> 9x9</p>
         </div>
         <div class="col-8">
             <div class="row">
-                <div class="col-8 text-right p0"><button id="randomize">Randomize <span id="randomIterations"></span></button></div>
+                <div class="col-8 text-right p0">
+                    <span id="randomize" class="randomize"><i class="fa fa-random"></i> Randomize <span id="randomIterations"></span></span>
+                    <span id="randomizeStop" class="randomize"><i class="fa fa-stop"></i></span>
+                </div>
                 <div class="col-4 text-right p0">
                     <label for="sizeSelector">Size: </label>
-                    <select id="sizeSelector">
-                        <option value="3">3 x 3</option>
-                    </select>
+                    <select id="sizeSelector"></select>
                 </div>
             </div>
         </div>
@@ -59,6 +60,6 @@
     </footer>
 
     <script src="js/utils.js"></script>
-    <script src="js/8puzzle.js"></script>
+    <script src="js/nxn-puzzle.js"></script>
 </body>
 </html>

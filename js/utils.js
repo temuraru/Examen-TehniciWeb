@@ -55,11 +55,10 @@ function sleep(time) {
 }
 
 /**
- * Compute tasks container height as difference between:
+ * Compute container height as difference between:
  * - the visible window height and
  * - the sum of the header and footer heights
- *
- * @returns {number}
+ * @returns {int}
  */
 function getContainerInnerHeight() {
     let headerHeight = document.querySelector('header').scrollHeight;
@@ -67,29 +66,15 @@ function getContainerInnerHeight() {
     let windowHeight = window.innerHeight;
 
     let outerSpacing = (2 + 2 * 20);
-    let containerHeight = windowHeight - (headerHeight + footerHeight + outerSpacing);
 
-    console.log(headerHeight, footerHeight, windowHeight, containerHeight);
-    return containerHeight;
+    return windowHeight - (headerHeight + footerHeight + outerSpacing);
 }
 
 function getContainerInnerWidth() {
     let windowWidth = window.innerWidth;
+    let outerSpacing = 2 * 2 + 2 * 20; // px = margin + border
 
-    let outerSpacing = 2 * 2 + 2 * 20; // px - margin + border
-    let containerWidth = windowWidth - outerSpacing;
-
-    console.log(windowWidth, outerSpacing, containerWidth);
-    return containerWidth;
-}
-
-/**
- * Generate an integer between 0 and max
- * @param max integer
- * @returns {int}
- */
-function getRandomInt(max) {
-    return randomInt(0, max);
+    return windowWidth - outerSpacing;
 }
 
 /**

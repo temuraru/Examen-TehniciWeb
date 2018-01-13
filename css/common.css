@@ -45,6 +45,24 @@ h1 { font-size: 28px;}
 .subtitle { font-style: oblique; }
 
 
+.randomize {
+    cursor: pointer;
+    color: #fff;
+    border: 1px solid #d58512;
+    border-radius: 4px;
+    background-color: #ec971f;
+    text-decoration: none;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
 /** Footer */
 .primary-footer {
     padding: 24px 0;
@@ -63,6 +81,7 @@ footer .stats { margin: 10px 0; }
 footer .stats .stat { display: inline-block; margin: 0 10px; }
 footer .stats .validTiles { color: green; }
 footer .stats .invalidTiles { color: red; }
+footer .stats .stat span { display: inline-block; background: #4393e6; color: #fff; border-radius: .5em; padding: 3px 10px; }
 
 
 

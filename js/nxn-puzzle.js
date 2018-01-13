@@ -2,8 +2,8 @@
 const EMPTY_TILE = ' ';
 const TILE_WIDTH = 34; // 34px
 const TILE_SPACING = 14; // 14px = 10 (5+5-padding) + 4 (2+2-border)
-const DEFAULT_SIZE = 3; // 3 x 3 puzzle
-const MAX_BOARD_SIZE = 9; // 3 x 3 puzzle
+const DEFAULT_SIZE = 5; // 5 x 5 puzzle
+const MAX_BOARD_SIZE = 9;
 
 let tilesPerLine = detectPuzzleSize();
 let totalTiles = tilesPerLine * tilesPerLine;
@@ -312,18 +312,17 @@ function getPossibleMoves() {
     if (currentTilePosition <= tilesPerLine * (tilesPerLine - 1)) {
         possibleMoves['down'] = currentTileIndex + tilesPerLine;
     }
+
     if ((currentTilePosition % tilesPerLine) === 0) {
         // the position to the LEFT of the currentTile
         possibleMoves['left'] = currentTileIndex - 1;
     } else {
-        if ((currentTilePosition % tilesPerLine) === (tilesPerLine + 1)) {
-            // the position to the RIGHT of the currentTile
-            possibleMoves['right'] = currentTileIndex + 1;
-        } else {
+        // the position to the RIGHT of the currentTile
+        possibleMoves['right'] = currentTileIndex + 1;
+
+        if ((currentTilePosition % tilesPerLine) > 1) {
             // the position to the LEFT of the currentTile
             possibleMoves['left'] = currentTileIndex - 1;
-            // the position to the RIGHT of the currentTile
-            possibleMoves['right'] = currentTileIndex + 1;
         }
     }
 
@@ -368,7 +367,7 @@ let init = function() {
          */
         function createSelector() {
             let selector = document.getElementById('sizeSelector');
-            let length = 4;
+            let length = 3;
             while (length < 10) {
                 let option = document.createElement('option');
                 option.value = length + '';
@@ -419,6 +418,10 @@ let init = function() {
             let nrOfRandomMoves = tilesPerLine * 10 + Math.floor(Math.random()*10);
             let randomIterations = document.getElementById('randomIterations');
             let interval;
+            let randomizeStop = document.getElementById('randomizeStop');
+            randomizeStop.addEventListener('click', function() {
+                clearInterval(interval);
+            });
             let makeNewRandomMove = function() {
                 if (nrOfRandomMoves > 0) {
                     randomIterations.innerText = '#' + nrOfRandomMoves;
