@@ -12,7 +12,6 @@ II Controale:
 10 - tab panels -	ca la tools/internet options în IE.
 11 - meniu principal (listă de comenzi care se deschide la plasarea cursorului / acţionarea butonului stâng al mouse-ului peste un cuvânt dintr-o listă).
 12 - meniu de context (listă de comenzi care se deschide la acţionarea butonului drept al mouse-ului peste un element din pagină sau oriunde în pagină).
-https://www.sitepoint.com/building-custom-right-click-context-menu-javascript/
 
 
 III Animaţie:
@@ -38,8 +37,8 @@ Bouncing balls
     https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_building_practice
 Input type Range
     https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range    
-    
-    
+Context-menu: 
+	https://www.sitepoint.com/building-custom-right-click-context-menu-javascript/        
     
     
     
