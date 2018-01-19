@@ -223,7 +223,9 @@
             case 'edit':
                 let textNode = targetElement.querySelector(".label").firstChild;
                 let newLabel = prompt("Introduceti noul nume:");
-                textNode.nodeValue = newLabel;
+                if (newLabel.length) {
+                    textNode.nodeValue = newLabel;
+                }
                 break;
             case 'delete':
                 let parent = targetElement.parentNode;

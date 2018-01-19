@@ -1,10 +1,11 @@
 
 .tasks { border: 1px solid grey; margin: 20px; border-radius: 1em; overflow: hidden; }
-.task { font-size: 3vw; padding: 0 2em; background-color: #fefefe; display: flex;
+.task { font-size: 3vw; padding: 0 2em; background-color: rgba(225, 225, 225, .9); display: flex;
     justify-content: center; flex-direction: column; }
-.task.odd { background-color: #efefef; }
-.task:hover { background-color: lightgray; }
+.task.odd { background-color: rgba(225, 225, 225, .9); }
+.task:hover { background-color: rgba(185, 185, 185, .9); }
 
+.owner { font-size: 24px;}
 
 
 

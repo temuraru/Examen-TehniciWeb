@@ -5,6 +5,9 @@ let Balls = [], ballsNr, mainCanvas, mainContext, canvasWidth, canvasHeight;
 let animation, repaintInterval = 20;
 let maxAnimationFrames = Number.MAX_SAFE_INTEGER;
 
+/**
+ * Simple helper class
+ */
 class Point {
     constructor(x, y) {
         this.x = x;
@@ -12,6 +15,10 @@ class Point {
     }
 }
 
+/**
+ * Ball class
+ * Handles the display/update of each ball instance on the canvas
+ */
 class Ball {
     constructor(centerPoint, radius, color, diffPoint) {
         this.center = centerPoint;
