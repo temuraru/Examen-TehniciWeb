@@ -22,46 +22,64 @@
                 <div class="col-12 text-right p0">
                     <label for="themeSelector">Theme: </label>
                     <select id="themeSelector">
-                        <option value="theme1">Theme 1 - bright</option>
-                        <option value="theme2">Theme 2 - light</option>
-                        <option value="theme3">Theme 3 - dark</option>
-                        <option value="theme4">Theme 4 - plain</option>
+                        <option value="theme1">Bright</option>
+                        <option value="theme2">Light</option>
+                        <option value="theme3">Dark</option>
+                        <option value="theme4">Simple</option>
                     </select>
                 </div>
             </div>
         </div>
     </header>
 
+    <div class="explanation">
+        <div>There are 3 actions implemented for now:
+            <ul>
+                <li>View - which takes you to the target element's href URL</li>
+                <li>Edit - which edits the 'label' name for the target element</li>
+                <li>Delete - which deletes the target element</li>
+            </ul>
+        </div>
+        <div class="feature">
+            You can choose the contextual menu theme by using the selector in the top-right corner:
+            <ul>
+                <li>Bright</li>
+                <li>Light</li>
+                <li>Dark</li>
+                <li>Plain</li>
+            </ul>
+        </div>
+    </div>
     <div class="main">
         <ul class="tasks">
             <li class="task" data-id="1">
                 <div class="task__content">
-                    I. Aplicatii (Jocuri): <a href="nxn-puzzle.html">[n x n] Slider puzzle</a>
+                    <span class="label">I. Aplicatii (Jocuri):</span> <a href="nxn-puzzle.html">[n x n] Slider puzzle</a>
                 </div>
                 <div class="task__actions">
-                    <i class="fa fa-eye menuAction"></i>
-                    <i class="fa fa-edit menuAction"></i>
-                    <i class="fa fa-times menuAction"></i>
+                    <i class="fa fa-eye menuAction" data-action="view"></i>
+                    <i class="fa fa-edit menuAction" data-action="edit"></i>
+                    <i class="fa fa-times menuAction" data-action="delete"></i>
                 </div>
             </li>
             <li class="task" data-id="2">
                 <div class="task__content">
-                    II. Controale: <a href="../project/right-click.html">Right-click - contextual menu</a>
+                    <span class="label">II. Controale:</span> <a href="../project/right-click.html">Right-click - contextual menu</a>
                 </div>
                 <div class="task__actions">
-                    <i class="fa fa-eye menuAction"></i>
-                    <i class="fa fa-edit menuAction"></i>
-                    <i class="fa fa-times menuAction"></i>
+                    <i class="fa fa-eye menuAction" data-action="view"></i>
+                    <i class="fa fa-edit menuAction" data-action="edit"></i>
+                    <i class="fa fa-times menuAction" data-action="delete"></i>
                 </div>
             </li>
             <li class="task" data-id="3">
                 <div class="task__content">
-                    III. Animatie: <a href="../project/bouncing-balls.html">Bouncing Balls</a>
+                    <span class="label">III. Animatie:</span> <a href="../project/bouncing-balls.html">Bouncing Balls</a>
                 </div>
                 <div class="task__actions">
-                    <i class="fa fa-eye menuAction"></i>
-                    <i class="fa fa-edit menuAction"></i>
-                    <i class="fa fa-times menuAction"></i>
+                    <i class="fa fa-eye menuAction" data-action="view"></i>
+                    <i class="fa fa-edit menuAction" data-action="edit"></i>
+                    <i class="fa fa-times menuAction" data-action="delete"></i>
                 </div>
             </li>
             <!-- more task items here... -->
@@ -71,12 +89,12 @@
     <nav class="context-menu context-menu_theme1" id="context-menu">
         <ul class="context-menu__items">
             <li class="context-menu__item">
-                <a href="#" class="context-menu__link">
+                <a href="#" class="context-menu__link" data-action="view">
                     <i class="fa fa-eye"></i> View Task
                 </a>
             </li>
             <li class="context-menu__item">
-                <a href="#" class="context-menu__link">
+                <a href="#" class="context-menu__link" data-action="edit">
                     <i class="fa fa-edit"></i> Edit Task
                 </a>
             </li>
@@ -87,7 +105,7 @@
             </li>
             <li class="context-menu__item context-menu__item--separator"></li>
             <li class="context-menu__item">
-                <a href="#" class="context-menu__link">
+                <a href="#" class="context-menu__link" data-action="delete">
                     <i class="fa fa-times"></i> Delete Task
                 </a>
             </li>

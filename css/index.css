@@ -1,6 +1,7 @@
 
 .tasks { border: 1px solid grey; margin: 20px; border-radius: 1em; overflow: hidden; }
-.task { padding: 0 2em; background-color: #fefefe; }
+.task { font-size: 3vw; padding: 0 2em; background-color: #fefefe; display: flex;
+    justify-content: center; flex-direction: column; }
 .task.odd { background-color: #efefef; }
 .task:hover { background-color: lightgray; }
 

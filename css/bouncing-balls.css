@@ -7,7 +7,7 @@
 .slider {
     -webkit-appearance: none;
     margin: 3px;
-    width: 100%;
+    width: 8em;
     height: 15px;
     border-radius: 5px;
     background: #d3d3d3;

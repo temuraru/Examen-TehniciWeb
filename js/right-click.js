@@ -86,10 +86,7 @@
     /**
      * Variables.
      */
-    var activeClassName = "context-menu--active";
-
     var contextMenuClassName = "context-menu";
-    var contextMenuItemClassName = "context-menu__item";
     var contextMenuLinkClassName = "context-menu__link";
     var contextMenuActive = "context-menu--active";
 
@@ -101,13 +98,9 @@
     var clickCoordsY;
 
     var menu = document.querySelector("#context-menu");
-    var menuItems = menu.querySelectorAll(".context-menu__item");
     var menuState = 0;
     var menuWidth;
     var menuHeight;
-    var menuPosition;
-    var menuPositionX;
-    var menuPositionY;
 
     var windowWidth;
     var windowHeight;
@@ -119,6 +112,7 @@
         contextListener();
         clickListener();
         keyupListener();
+        menuActionsListener();
         handleThemes();
         resizeListener();
     }
@@ -126,7 +120,6 @@
     function handleThemes() {
         let themeSelector = document.getElementById('themeSelector');
         let changeTheme = function() {
-            console.log(themeSelector.options);
             let selectedOption = themeSelector.options[themeSelector.selectedIndex].value; // 'theme2';
             document.getElementById('context-menu').className = contextMenuClassName + ' ' + contextMenuClassName + '_' + selectedOption;
         };
@@ -189,6 +182,21 @@
     }
 
     /**
+     * Listens for menuActions events.
+     */
+    function menuActionsListener() {
+        let icons = document.querySelectorAll('.menuAction');
+        for(let i = 0; i < icons.length; i++) {
+            let icon = icons[i];
+            icon.addEventListener('click', function(event) {
+                let targetElement = findAncestor(event.target, 'task');
+                let action = icon.getAttribute('data-action');
+                handleMenuOptions(targetElement, action);
+            })
+        }
+    }
+
+    /**
      * Turns the custom context menu on.
      */
     function toggleMenuOn() {
@@ -205,10 +213,38 @@
         }
     }
 
+    function handleMenuOptions(targetElement, action) {
+
+        switch(action) {
+            case 'view':
+                let src = targetElement.querySelector("a").getAttribute('href');
+                window.location.href = src;
+                break;
+            case 'edit':
+                let textNode = targetElement.querySelector(".label").firstChild;
+                let newLabel = prompt("Introduceti noul nume:");
+                textNode.nodeValue = newLabel;
+                break;
+            case 'delete':
+                let parent = targetElement.parentNode;
+                parent.removeChild(targetElement);
+                break;
+        }
+    }
+
     function menuItemListener( link ) {
-        console.log( "Task ID - " +
-            taskItemInContext.getAttribute("data-id") +
-            ", Task action - " + link.getAttribute("data-action"));
+        let action = link.getAttribute("data-action");
+        let taskId = taskItemInContext.getAttribute("data-id");
+        let targetElement = document.querySelectorAll("[data-id='"+taskId+"']")[0];
+        handleMenuOptions(targetElement, action);
+        toggleMenuOff();
+    }
+
+    function iconsListener( ) {
+        let action = link.getAttribute("data-action");
+        let taskId = taskItemInContext.getAttribute("data-id");
+        let targetElement = document.querySelectorAll("[data-id='"+taskId+"']")[0];
+        handleMenuOptions(targetElement, action);
         toggleMenuOff();
     }
 

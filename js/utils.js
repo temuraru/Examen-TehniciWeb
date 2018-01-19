@@ -113,3 +113,15 @@ function generateRandomColor(uniform, transparency) {
 
     return 'rgb(' + colorParts.join(',') +')';
 }
+
+/**
+ *
+ * @param el DomElement
+ * @param className string
+ * @returns {*}
+ */
+function findAncestor (el, className) {
+    while ((el = el.parentElement) && !el.classList.contains(className));
+
+    return el;
+}

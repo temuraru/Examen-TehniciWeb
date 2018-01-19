@@ -150,7 +150,6 @@ function init() {
 
             let counter = 0;
             function animate() {
-                // console.log('animation started: ', counter);
                 // clear the context for the new positions
                 mainContext.clearRect(0, 0, canvasWidth, canvasHeight);
                 mainContext.fillStyle = 'rgba(0, 0, 0, 0.25)'; //generateRandomColor(true, 0.15);
